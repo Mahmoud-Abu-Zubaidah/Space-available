@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+:root{
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+    --colors: hsl(6, 100%, 80%) , hsl(335, 100%, 65%);
+}
+html , body {
+    height:100%;
+}
+p{
+    color: white;
+    font-size: 14px;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: var(--Very-Dark-Blue);
+}
+.col-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 800px;
+    height: 150px;
+}
+.col-items{
+    width: 250px;
+    height: 150px;
+    padding: 30px;
+    border-radius: 5px 70px 5px 5px;
+    background-color: var(--Dark-Blue);
+}
+img[alt="logo"]{
+    height: 30px;
+}
+.services{
+    margin-top: 20px;
+    width: 100%;
+}
+.services img{
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 5px;
+    border: 10px solid var(--Very-Dark-Blue);
+}
+.progress{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+    width: 500px;
+    height: 125px;
+    background-color: var(--Dark-Blue);
+    border-radius: 5px;
+    flex-direction: column;
+    position: relative;
+}
+.progress-details {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    display: flex;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 100px;
+}
+.progress::after {
+    content: "185 GB Left";
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    right: 25px;
+    top: -25px;
+    justify-content: center;
+    align-items: center;
+}
+.progress::before{
+    content: "";
+    border: 15px transparent solid;
+    border-right-color: white;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    transform: translateY(-50%);
+}
+.progress-details span:first-of-type {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: block;
+    background-image: linear-gradient(to right,var(--colors));
+    border-radius: 100px;
+    border: 1px solid;
+    background-color: var(--Very-Dark-Blue);
+}
+.progress-details::after{
+    content: "1000 GB";
+    font-size: 14px;
+    position: absolute;
+    bottom: -20px;
+    color: white;
+    font-weight: 400;
+    right: 0;
+}
+.progress-details::before{
+    content: "0 GB";
+    font-size: 14px;
+    position: absolute;
+    bottom: -20px;
+    color: white;
+    font-weight: 400;
+    left: 0;
+}
+.progress-details span:first-of-type::after {
+    content: "";
+    width: 12px;
+    height:12px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    animation: shin infinite ease-in-out 1.5s alternate;
+}
+@keyframes shin{
+    0%{
+        box-shadow: 0 0 6px 0px white;
+    }
+    100%{
+        box-shadow: 0 0 1px 0px white;
+    }
+}
+/* animation for free space 
+    remove the comments in html page and this comment to turn it on 
+.load{
+    width: 4%;
+    height: 100%;
+    display: block;
+    animation: load infinite ease-in-out 1s 1.5s alternate ;
+}
+.load:nth-child(2){
+    animation-delay: 2s;
+}
+.load:nth-child(3){
+    animation-delay: 2.5s;
+}
+.load:nth-child(4){
+    animation-delay: 3s;
+}
+.load:nth-child(5){
+    animation-delay: 3.5s;
+}
+.load:nth-child(6){
+    animation-delay: 4s;
+}
+@keyframes load {
+    0%{
+        background-color: var(--Very-Dark-Blue);
+    }
+    100%{
+        background-color: var(--Dark-Blue);
+    }
+} */
+
+
+@media (min-width:600px) and (max-width:900px){
+    .col-content{
+        width: 100%;
+        height: 350px;
+        flex-direction: column;
+    }
+    body{
+        background-size: cover;
+    }
+    .col-items{
+        align-self: flex-start;
+        margin-left:30px;
+        box-shadow: 15px 15px 10px 0px var(--Very-Dark-Blue);
+    }
+    .progress{
+        text-align: center;
+        margin-right:30px;
+        box-shadow: 15px 15px 10px 0px var(--Very-Dark-Blue);
+    }
+}
+
+@media (max-width:600px){
+    .col-content{
+        flex-direction: column;
+        width: 100%;
+        height: 450px;
+        align-items: center;
+    }
+    .col-items img{
+        height:30%;
+        
+    }
+    .col-items{
+        width: 90%;
+        height: 200px;
+    }
+    .services{
+        margin-top: 30px;
+    }
+    .services img{
+        width:50px;
+        height:50px;
+        padding: 5px;
+    }
+    .progress{
+        width: 90%;
+        height: 200px;
+        text-align: center;
+    }
+    .progress p{
+        font-size: 20px !important;
+    }
+    body{
+        background-image: url(images/bg-mobile.png);
+        background-size: cover;
+        background-position: initial;
+    }
+    .progress::after{
+        width: 150px;
+        height: 70px;
+        top: initial;
+        bottom: -35px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .progress::before{
+        content: none;
+    }
+    .progress-details{
+        height:20px;
+    }
+    .progress-details span:first-of-type:after{
+        width: 17px;
+        height: 17px;
+    }
+}
